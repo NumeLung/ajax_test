@@ -39,7 +39,7 @@ switch ($selectType) {
         $sql = "SELECT EmployeeID, CONCAT(Firstname, \" \", Lastname) AS Name, Title, BirthDate, HireDate, CONCAT(Address, \", \", c.name) AS Address  
                 FROM employees e
                 LEFT JOIN cities c ON c.id = e.IdCity 
-                WHERE Title = '?'";
+                WHERE Title = \"?\"";
         $stmt = $mysqli->prepare($sql);
         $stmt->bind_param("s", $_GET['q']);
         break;
